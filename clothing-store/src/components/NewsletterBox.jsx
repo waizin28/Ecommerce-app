@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewsletterBox = () => {
+const NewsLetterBox = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault(); //don't reload webpage when submit
   };
@@ -36,4 +36,4 @@ const NewsletterBox = () => {
   );
 };
 
-export default NewsletterBox;
+export default NewsLetterBox;
