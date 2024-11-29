@@ -1,9 +1,10 @@
 import React from 'react';
 
-const NewsLetterBox = () => {
+const NewsletterBox = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault(); //don't reload webpage when submit
   };
+
   return (
     <div className='text-center'>
       <p className='text-2xl font-medium text-gray-800'>
@@ -35,4 +36,4 @@ const NewsLetterBox = () => {
   );
 };
 
-export default NewsLetterBox;
+export default NewsletterBox;
