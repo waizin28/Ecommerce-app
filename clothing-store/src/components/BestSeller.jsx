@@ -10,7 +10,7 @@ const BestSeller = () => {
     const bestProducts = products.filter((product) => product.bestseller);
     // Only getting 5 best seller product
     setBestSeller(bestProducts.slice(0, 5));
-  }, []);
+  }, [products]);
 
   return (
     <div className='my-10'>

@@ -5,7 +5,24 @@ import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount } = useContext(ShopContext);
+  const {
+    setShowSearch,
+    getCartCount,
+    navigate,
+    token,
+    setToken,
+    setCartItems,
+  } = useContext(ShopContext);
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    // remove state token
+    setToken('');
+    // clear cart Item
+    setCartItems({});
+    // naviage to login page
+    navigate('/login');
+  };
 
   return (
     <div className='flex items-center justify-between py-5 font-medium'>
@@ -45,16 +62,34 @@ const Navbar = () => {
         />
 
         <div className='group relative'>
-          <Link to='/login'>
-            <img src={assets.profile_icon} className='w-5 cursor-pointer' />
-          </Link>
-          <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-            <div className='flex flex-col gap-2 w-36 px-5 bg-slate-100 text-gray-500 rounded'>
-              <p className='cursor-pointer hover:text-black py-1'>My Profile</p>
-              <p className='cursor-pointer hover:text-black py-1'>Orders</p>
-              <p className='cursor-pointer hover:text-black py-1'>Logout</p>
+          <img
+            src={assets.profile_icon}
+            className='w-5 cursor-pointer'
+            onClick={() => (token ? null : navigate('/login'))}
+          />
+
+          {/* Dropdown, onyl display when logged in*/}
+          {token && (
+            <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
+              <div className='flex flex-col gap-2 w-36 px-5 bg-slate-100 text-gray-500 rounded'>
+                <p className='cursor-pointer hover:text-black py-1'>
+                  My Profile
+                </p>
+                <p
+                  className='cursor-pointer hover:text-black py-1'
+                  onClick={() => navigate('/orders')}
+                >
+                  Orders
+                </p>
+                <p
+                  className='cursor-pointer hover:text-black py-1'
+                  onClick={logout}
+                >
+                  Logout
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Add to Cart with counter */}

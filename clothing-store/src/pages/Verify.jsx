@@ -35,6 +35,7 @@ const Verify = () => {
         navigate('/orders');
       } else {
         // navigate back to cart back to try again
+        console.log('Going back');
         navigate('/cart');
       }
     } catch (error) {
