@@ -1,12 +1,16 @@
+Here’s an updated **GitHub README** with the provided links integrated:  
+
+---
+
 # Forever Clothing Store  
 
 **Forever Clothing Store** is a modern e-commerce web application with an admin dashboard, designed for a seamless shopping and management experience. Built with **React.js**, **Express.js**, and **Node.js**, it integrates secure payment gateways like **Stripe** and **Razorpay**.  
 
-Live Links
+## Live Links  
 
-Admin Dashboard
-Clothing Store
-Backend API
+- [**Admin Dashboard**](https://forever-admin-alpha.vercel.app)  
+- [**Clothing Store**](https://ecommerce-app-seven-blond.vercel.app)  
+- [**Backend API**](https://forever-backend-dun.vercel.app)  
 
 ## Features  
 
@@ -62,12 +66,16 @@ Ensure you have the following installed:
    RAZORPAY_API_KEY=<your-razorpay-api-key>  
    ```  
 
-4. Start the application:  
+4. Start the frontend:  
    ```bash  
    npm run dev  
-   ```  
+   ```
+5. Start the Backend:
+   ```bash  
+   npm run server  
+   ```
 
-5. Access the app in your browser at `http://localhost:3000`.  
+5. Access the backend at `http://localhost:4000`, admin panel at `http://localhost:5174` and forever store at `http://localhost:5173`.  
 
 ## Contributing  
 Contributions are welcome! Please fork the repository and submit a pull request with your improvements.  
@@ -77,4 +85,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---  
 
-Enjoy shopping and managing with **Forever Clothing Store**! 🌟
+Enjoy shopping and managing with **Forever Clothing Store**! 🌟  
