@@ -27,12 +27,14 @@ Here’s an updated **GitHub README** with the provided links integrated:
 
 ### Backend Highlights  
 - Built with **Express.js** and **Node.js** for robust server-side operations.  
-- Connected to a **MongoDB Atlas** database for scalable data storage.  
+- Connected to a **MongoDB Atlas** database for scalable data storage.
+- Integrated with Cloudinary for efficient and scalable image storage and retrieval.
 - Deployed on **Vercel** for reliable performance.  
 
 ## Tech Stack  
 - **Frontend**: React.js, HTML, CSS  
-- **Backend**: Node.js, Express.js  
+- **Backend**: Node.js, Express.js
+- **Image Storage**: Cloudinary
 - **Database**: MongoDB Atlas  
 - **Payment Gateways**: Stripe, Razorpay  
 - **Deployment**: Vercel  
@@ -60,10 +62,15 @@ Ensure you have the following installed:
    ```  
 
 3. Create a `.env` file in the root directory with the following environment variables:  
-   ```env  
-   MONGO_URI=<your-mongodb-atlas-uri>  
-   STRIPE_API_KEY=<your-stripe-api-key>  
-   RAZORPAY_API_KEY=<your-razorpay-api-key>  
+   ```env
+   MONGODB_URI=<your-mongodb-atlas-uri>  
+   CLOUDINARY_API_KEY=<your-cloudinary-api-key>  
+   CLOUDINARY_API_SECRET=<your-cloudinary-api-secret-key>  
+   CLOUDINARY_NAME=<your-cloudinary-cloud-name>  
+   JWT_SECRET=<your-jwt-secret-key>  
+   STRIPE_SECRET_KEY=<your-stripe-secret-key>  
+   RAZORPAY_KEY_ID=<your-razorpay-key-id>  
+   RAZORPAY_KEY_SECRET=<your-razorpay-key-secret>  
    ```  
 
 4. Start the frontend:  
