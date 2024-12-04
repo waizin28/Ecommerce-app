@@ -10,20 +10,22 @@ const Cart = () => {
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
-    const tempCartData = [];
-    for (const prodId in cartItems) {
-      for (const prodSize in cartItems[prodId]) {
-        if (cartItems[prodId][prodSize] > 0) {
-          tempCartData.push({
-            _id: prodId,
-            size: prodSize,
-            quantity: cartItems[prodId][prodSize],
-          });
+    if (products.length > 0) {
+      const tempCartData = [];
+      for (const prodId in cartItems) {
+        for (const prodSize in cartItems[prodId]) {
+          if (cartItems[prodId][prodSize] > 0) {
+            tempCartData.push({
+              _id: prodId,
+              size: prodSize,
+              quantity: cartItems[prodId][prodSize],
+            });
+          }
         }
       }
+      setCartData(tempCartData);
     }
-    setCartData(tempCartData);
-  }, [cartItems]);
+  }, [cartItems, products]);
 
   return (
     <div className='border-t pt-14'>
@@ -32,7 +34,7 @@ const Cart = () => {
       </div>
 
       <div>
-        {cartData.map((cartProduct) => {
+        {cartData.map((cartProduct, index) => {
           const productData = products.find(
             (product) => product._id === cartProduct._id
           );
@@ -40,7 +42,7 @@ const Cart = () => {
           //   Displaying each product added to cart
           return (
             <div
-              key={cartProduct._id}
+              key={index}
               className='py-4 border-t border-b text-gray-700 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4'
             >
               <div className='flex items-start gap-6'>
